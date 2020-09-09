@@ -11,7 +11,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33facd23-1dba-4fc0-9a7e-76a89cf63620" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/tech-jobs-api.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +50,7 @@
       <option name="presentableId" value="Default" />
       <updated>1599652757267</updated>
       <workItem from="1599652758411" duration="662000" />
-      <workItem from="1599653452224" duration="1342000" />
+      <workItem from="1599653452224" duration="1927000" />
     </task>
     <servers />
   </component>
@@ -72,5 +77,9 @@
       <screen x="0" y="25" width="1440" height="816" />
     </state>
     <state x="239" y="74" key="SettingsEditor/0.25.1440.816@0.25.1440.816" timestamp="1599654437821" />
+    <state x="395" y="165" width="670" height="676" key="search.everywhere.popup" timestamp="1599655261148">
+      <screen x="0" y="25" width="1440" height="816" />
+    </state>
+    <state x="395" y="165" width="670" height="676" key="search.everywhere.popup/0.25.1440.816@0.25.1440.816" timestamp="1599655261148" />
   </component>
 </project>
