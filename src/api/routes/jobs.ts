@@ -2,8 +2,9 @@ import express, { Request, Response, NextFunction, Router } from 'express';
 
 const router: Router = Router()
 
-router.get('/', (req: Request, res: Response, next: NextFunction) => {
-  res.status(200).send('Working..');
-});
+// Importing the controller
+import JobsController from '../controllers/jobs';
+
+router.get('/', JobsController.testRouteControllerFunction);
 
 export default router;
