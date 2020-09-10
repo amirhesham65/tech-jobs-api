@@ -4,7 +4,7 @@
  - /search -> to search for jobs with a certain keyword with filter
  */
 
-import express, { Application, Request, Response, NextFunction } from "express";
+import express, { Application } from "express";
 
 // Initializing the express application
 const PORT: number = 5000;
