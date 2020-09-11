@@ -4,7 +4,7 @@ import { Request, Response } from 'express';
 import GithubJobsUtility from "../apis/github-jobs";
 
 const getJobsByKeyword = async (req: Request, res: Response) => {
-  const keyword: string = req.params.keyword.toString();
+  const keyword: string = req.params.keyword.toString().toLowerCase();
   try {
     const resultsData = await GithubJobsUtility.getGithubJobsPositionByKeyword(keyword);
     res.json({
