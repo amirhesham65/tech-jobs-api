@@ -11,3 +11,5 @@ class Job {
     public created_at: string,
   ) {}
 }
+
+export default Job;
