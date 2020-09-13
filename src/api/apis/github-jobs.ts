@@ -8,11 +8,9 @@ const getGithubJobsPositionByKeyword = async (keyword: string) => {
   try {
     const response = await fetch(url);
     const data = await response.json();
-    return data.map((i: any) => {
-      return createJobFromGithubJobData(i);
-    });
+    return data.map((githubJobData: any) => createJobFromGithubJobData(githubJobData));
   } catch (error) {
-    throw "An error occurred while fetching data from Github Jobs";
+    throw new Error("An error occurred while fetching data from Github Jobs");
   }
 }
 
