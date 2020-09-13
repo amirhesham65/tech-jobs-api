@@ -10,8 +10,8 @@ An API that allows you to search and view tech-related jobs fetched from differe
 1. Clone the current repository
 
 ```sh
-$git clone https://github.com/amirhesham65/tech-jobs-api.git
-$cd tech-jobs-api 
+git clone https://github.com/amirhesham65/tech-jobs-api.git
+cd tech-jobs-api 
  ```
 
 2. Build and launch the API
@@ -30,4 +30,4 @@ open http://localhost:5000/
 
 ---
 
-This API is a personal side project, and it was build by [Amir Hesham](https://github.com/amirhesham65) for educational purposes. 
+This API is a personal side project, and it was built by [Amir Hesham](https://github.com/amirhesham65) for educational purposes. 
