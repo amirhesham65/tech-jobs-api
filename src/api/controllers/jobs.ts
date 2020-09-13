@@ -1,9 +1,10 @@
-import { Request, Response } from 'express';
+import { Request, Response, NextFunction } from 'express';
+import ExpressHttpException from "../utils/error";
 
 // Import utility functions
 import GithubJobsUtility from "../apis/github-jobs";
 
-const getJobsByKeyword = async (req: Request, res: Response) => {
+const getJobsByKeyword = async (req: Request, res: Response, next: NextFunction) => {
   const keyword: string = req.params.keyword.toString().toLowerCase();
   try {
     const resultsData = await GithubJobsUtility.getGithubJobsPositionByKeyword(keyword);
@@ -14,9 +15,8 @@ const getJobsByKeyword = async (req: Request, res: Response) => {
         data: resultsData
       }
     });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ status: 500, error })
+  } catch (err) {
+    next(new ExpressHttpException(err.status, err.message));
   }
 }
 
