@@ -12,10 +12,9 @@ const combineResults = async (...sources: any) : Promise<Job[]> => [].concat(...
 const getJobsByKeyword = async (req: Request, res: Response, next: NextFunction) => {
   const keyword: string = req.params.keyword.toString().toLowerCase();
   try {
-    const githubAPIResultsData: Job[] = await GithubJobsUtility.getGithubJobsPositionByKeyword(keyword);
-    const adzunaAPIResultsData: Job[] = await AdzunaAPIUtility.getAdzunaPositionByKeyword(keyword);
-    const resultsData = await combineResults(githubAPIResultsData, adzunaAPIResultsData);
-
+    const githubAPIResultsData: Job[] = await GithubJobsUtility.getGithubJobsByKeyword(keyword);
+    const adzunaAPIResultsData: Job[] = await AdzunaAPIUtility.getAdzunaJobsByKeyword(keyword);
+    const resultsData: Job[] = await combineResults(githubAPIResultsData, adzunaAPIResultsData);
     res.json({
       status: 200,
       results: {

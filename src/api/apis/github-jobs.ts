@@ -3,7 +3,7 @@ import Job from "../models/job";
 
 // Functions responsible for fetching and manipulating Github Jobs API data.
 
-const getGithubJobsPositionByKeyword = async (keyword: string) => {
+const getGithubJobsByKeyword = async (keyword: string) => {
   const url: string = `https://jobs.github.com/positions.json?search=${keyword}`;
   try {
     const response = await fetch(url);
@@ -17,6 +17,7 @@ const getGithubJobsPositionByKeyword = async (keyword: string) => {
 const createJobFromGithubJobData = (jobData: any) : Job  =>{
   return new Job(
     jobData.id,
+    "GithubJobs-API",
     jobData.title,
     jobData.description,
     jobData.url,
@@ -29,7 +30,7 @@ const createJobFromGithubJobData = (jobData: any) : Job  =>{
 }
 
 const GithubJobsUtility = {
-  getGithubJobsPositionByKeyword,
+  getGithubJobsByKeyword,
 }
 
 export default GithubJobsUtility;

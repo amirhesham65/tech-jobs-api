@@ -3,7 +3,7 @@ import Job from "../models/job";
 
 // Functions responsible for fetching and manipulating Adzuna API data.
 
-const getAdzunaPositionByKeyword = async (keyword: string) : Promise<Job[]> => {
+const getAdzunaJobsByKeyword = async (keyword: string) : Promise<Job[]> => {
   const applicationID = '7afd7695';
   const apiKey = process.env.ADZUNA_API_KEY;
   const url: string = `http://api.adzuna.com/v1/api/jobs/gb/search/1?app_id=${applicationID}&app_key=${apiKey}&results_per_page=20&what=${keyword}&content-type=application/json`;
@@ -20,6 +20,7 @@ const getAdzunaPositionByKeyword = async (keyword: string) : Promise<Job[]> => {
 const createJobFromAdzunaData = (jobData: any) : Job  =>{
   return new Job(
     jobData.id,
+    "Adzuna-API",
     jobData.title,
     jobData.description,
     jobData.redirect_url,
@@ -32,7 +33,7 @@ const createJobFromAdzunaData = (jobData: any) : Job  =>{
 }
 
 const AdzunaAPIUtility = {
-  getAdzunaPositionByKeyword,
+  getAdzunaJobsByKeyword,
 }
 
 export default AdzunaAPIUtility;

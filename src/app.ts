@@ -18,7 +18,7 @@ import jobsRoutes from './api/routes/jobs';
 app.use('/jobs', jobsRoutes);
 
 // Error handling
-app.use(ExpressHttpException.expressHandleNotFoundError)
-app.use(ExpressHttpException.expressErrorMiddleware)
+app.use(ExpressHttpException.expressHandleNotFoundError);
+app.use(ExpressHttpException.expressErrorMiddleware);
 
-app.listen(PORT, () => console.log(`Server is running on port: ${PORT}`))
+app.listen(PORT, () => console.log(`Server is running on port: ${PORT}`));
