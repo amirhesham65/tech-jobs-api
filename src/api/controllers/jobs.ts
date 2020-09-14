@@ -3,11 +3,19 @@ import ExpressHttpException from "../utils/error";
 
 // Import utility functions
 import GithubJobsUtility from "../apis/github-jobs";
+import AdzunaAPIUtility from "../apis/adzuna";
+import Job from "../models/job";
+
+// Combining all the results fetched from different resources
+const combineResults = async (...sources: any) : Promise<Job[]> => [].concat(...sources);
 
 const getJobsByKeyword = async (req: Request, res: Response, next: NextFunction) => {
   const keyword: string = req.params.keyword.toString().toLowerCase();
   try {
-    const resultsData = await GithubJobsUtility.getGithubJobsPositionByKeyword(keyword);
+    const githubAPIResultsData: Job[] = await GithubJobsUtility.getGithubJobsPositionByKeyword(keyword);
+    const adzunaAPIResultsData: Job[] = await AdzunaAPIUtility.getAdzunaPositionByKeyword(keyword);
+    const resultsData = await combineResults(githubAPIResultsData, adzunaAPIResultsData);
+
     res.json({
       status: 200,
       results: {
