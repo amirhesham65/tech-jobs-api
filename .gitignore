@@ -1,5 +1,11 @@
 # Dependency directories
 node_modules/
+
+# IDEs configurations
 .idea/
 
+# Build folder
 dist/
+
+# Other
+.env
