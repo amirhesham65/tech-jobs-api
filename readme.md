@@ -3,7 +3,7 @@ An API that allows you to search and view tech-related jobs fetched from differe
 
 ## Supported Job sources:
 1. [Github Job API](https://jobs.github.com/api)
-2. [Adzuna API](https://developer.adzuna.com/) [In progress]
+2. [Adzuna API](https://developer.adzuna.com/)
 3. ...
 
 ## Usage
