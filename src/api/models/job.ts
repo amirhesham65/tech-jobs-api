@@ -9,7 +9,7 @@ class Job {
     public company: string,
     public company_url: string = "",
     public company_logo: string = "",
-    public created_at: string,
+    public created_at: Date,
   ) {}
 }
 

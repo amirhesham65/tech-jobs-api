@@ -28,7 +28,7 @@ const createJobFromAdzunaData = (jobData: any) : Job  =>{
     jobData.company.display_name,
     jobData.company_url,
     jobData.company_logo,
-    jobData.created
+    new Date(jobData.created)
   );
 }
 

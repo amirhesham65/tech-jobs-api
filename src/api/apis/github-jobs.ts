@@ -25,7 +25,7 @@ const createJobFromGithubJobData = (jobData: any) : Job  =>{
     jobData.company,
     jobData.company_url,
     jobData.company_logo,
-    jobData.created_at
+    new Date(jobData.created_at)
   );
 }
 
