@@ -1,12 +1,16 @@
 import express, { Application, Request, Response } from "express";
-import morgan from 'morgan';
-import * as dotenv from 'dotenv';
+import morgan from "morgan";
+import cors from 'cors';
+import * as dotenv from "dotenv";
 import ExpressHttpException from "./api/utils/error";
 
 // Initializing the express application
 dotenv.config();
 const PORT: number = Number(process.env.PORT) || 5000;
 const app: Application = express();
+
+// Handling CORS
+app.use(cors());
 
 // Using morgan request logging
 app.use(morgan('tiny'));
